@@ -1,0 +1,32 @@
+// src/app/statistics/statistics.page.scss
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #2C2C2C;
+  padding: 2rem;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chart-wrapper {
+  background-color: #363636;
+  padding: 1rem;
+  border-radius: 8px;
+
+  &:first-child {
+    grid-column: 1 / -1;
+  }
+}

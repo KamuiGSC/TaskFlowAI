@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'ionic.taskflowai',
+  appId: 'com.example.app',
   appName: 'taskflowai',
-  webDir: 'www/browser'
+  webDir: 'www'
 };
 
 export default config;

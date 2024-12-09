@@ -5,6 +5,10 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    files: [
+      'src/**/*.spec.ts',
+      'src/**/*.d.ts'
+    ],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
@@ -41,4 +45,5 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true
   });
+
 };

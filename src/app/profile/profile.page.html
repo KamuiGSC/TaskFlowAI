@@ -1,0 +1,15 @@
+<!-- src/app/profile/profile.page.html -->
+<ion-content>
+  <div class="layout">
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+      <h1>Perfil de Usuario</h1>
+      <div class="profile-info" *ngIf="user">
+        <img [src]="user.photoURL || 'assets/user.png'" alt="Avatar" class="avatar">
+        <h2>{{ user.displayName || 'Usuario' }}</h2>
+        <p>{{ user.email }}</p>
+      </div>
+      <ion-button expand="block" (click)="logout()">Cerrar Sesión</ion-button>
+    </div>
+  </div>
+</ion-content>

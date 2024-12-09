@@ -1,0 +1,55 @@
+// src/app/welcome/welcome.page.scss
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #2C2C2C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-container {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+
+  .welcome-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    color: #9e9e9e;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .welcome-text {
+    color: #9e9e9e;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .start-button {
+    --background: #6D39D5;
+    --padding-top: 1.25rem;
+    --padding-bottom: 1.25rem;
+    font-weight: 500;
+
+    &:hover {
+      --background: #5c2eb8;
+    }
+  }
+}
