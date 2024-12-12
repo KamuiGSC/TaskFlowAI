@@ -3,13 +3,23 @@
   <div class="layout">
     <app-sidebar></app-sidebar>
     <div class="main-content">
-      <h1>Perfil de Usuario</h1>
+      <h1 class="ion-text-center">Perfil de Usuario</h1>
       <div class="profile-info" *ngIf="user">
-        <img [src]="user.photoURL || 'assets/user.png'" alt="Avatar" class="avatar">
+        <img
+          [src]="user.photoURL || 'assets/user.png'"
+          alt="Avatar"
+          class="avatar"
+        />
         <h2>{{ user.displayName || 'Usuario' }}</h2>
         <p>{{ user.email }}</p>
       </div>
-      <ion-button expand="block" (click)="logout()">Cerrar Sesión</ion-button>
+      <ion-row>
+        <ion-col width-50 style="text-align: center">
+          <ion-button class="ion-text-center" (click)="logout()"
+            >Cerrar Sesión</ion-button
+          >
+        </ion-col>
+      </ion-row>
     </div>
   </div>
 </ion-content>

@@ -1,32 +1,75 @@
-// src/app/statistics/statistics.page.scss
-.layout {
-  display: flex;
-  height: 100%;
-}
-
-.main-content {
-  flex: 1;
-  background-color: #2C2C2C;
-  padding: 2rem;
-}
-
-h1 {
-  color: white;
-  margin-bottom: 2rem;
-}
-
-.charts-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.chart-wrapper {
-  background-color: #363636;
-  padding: 1rem;
-  border-radius: 8px;
-
-  &:first-child {
-    grid-column: 1 / -1;
+.statistics-container {
+  .layout {
+    display: flex;
+    height: 100%;
   }
+
+  .sidebar-wrapper {
+    width: 0px; // Ajusta este valor al ancho de tu sidebar
+    flex-shrink: 0;
+  }
+
+  .main-content-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-left: 20px; // Espacio entre el sidebar y el contenido
+  }
+
+  .main-content {
+    max-width: 800px; // Ajusta este valor para que abarque bien la pantalla
+    margin: 0 auto; // Centra el contenido horizontalmente
+    padding: 16px;
+  }
+}
+
+ion-card {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+}
+
+ion-card-title {
+  color: #FFFFFF;
+}
+
+ion-card-subtitle {
+  color: #9e9e9e;
+}
+
+ion-item {
+  --background: transparent;
+  --color: #FFFFFF;
+}
+
+ion-progress-bar {
+  --background: #3C3C3C;
+  --progress-background: #6D39D5;
+}
+
+ion-note {
+  color: #9e9e9e;
+}
+
+// Ajusta estos colores según tu esquema de colores
+.ion-color-primary {
+  --ion-color-base: #6D39D5;
+}
+
+.ion-color-secondary {
+  --ion-color-base: #4CAF50;
+}
+
+.ion-color-tertiary {
+  --ion-color-base: #FF9800;
+}
+
+.ion-color-success {
+  --ion-color-base: #4CAF50;
+}
+
+.ion-color-warning {
+  --ion-color-base: #FF9800;
+}
+
+.ion-color-danger {
+  --ion-color-base: #F44336;
 }

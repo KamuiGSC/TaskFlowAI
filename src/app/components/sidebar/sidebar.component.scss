@@ -1,98 +1,95 @@
-// src/app/components/sidebar/sidebar.component.scss
+.sidebar-container {
+  position: relative; /* Posiciona la barra lateral y el botón */
+  height: 100%;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background-color: #1E1E1E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  ion-icon {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+  }
+
+  &:hover {
+    background-color: #363636;
+  }
+}
+
 .sidebar {
-  background-color: #2C2C2C;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 250px;
   height: 100%;
+  background-color: #2C2C2C;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #3C3C3C;
+  transition: transform 0.3s ease;
+}
 
-  .user-profile {
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #3C3C3C;
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+
+  .user-name {
+    color: white;
+    font-size: 1rem;
+  }
+}
+
+.nav-menu {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .nav-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #3C3C3C;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    color: #9e9e9e;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 
-    .user-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 0.5rem;
-    }
-
-    .user-name {
+    &:hover {
+      background-color: #363636;
       color: white;
-      font-size: 1rem;
-    }
-  }
-
-  .nav-menu {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem;
-      color: #9e9e9e;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #363636;
-        color: white;
-      }
-
-      &.active {
-        background-color: #6D39D5;
-        color: white;
-      }
-
-      ion-icon {
-        font-size: 1.25rem;
-      }
-    }
-  }
-
-  .groups-section {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #3C3C3C;
-
-    h3 {
-      color: #9e9e9e;
-      font-size: 0.875rem;
-      margin-bottom: 0.5rem;
     }
 
-    .group-item {
-      color: #9e9e9e;
-      padding: 0.5rem;
-      font-size: 0.875rem;
+    &.active {
+      background-color: #6D39D5;
+      color: white;
     }
-  }
-
-  .ai-toggle {
-    margin-top: auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
 
     ion-icon {
-      font-size: 2rem;
-      color: #6D39D5;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: #5c2eb8;
-      }
+      font-size: 1.25rem;
     }
   }
 }

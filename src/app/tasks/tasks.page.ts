@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { TaskService, Task } from '../services/task.service';
 import { AuthService } from '../services/auth.service';
+import { AIChatComponent } from '../components/ai-chat/ai-chat.component';
 
 @Component({
   selector: 'app-tasks',
@@ -40,6 +41,12 @@ import { AuthService } from '../services/auth.service';
             </div>
           </div>
         </div>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="openAIChat()">
+            <ion-icon name="chatbubbles-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <app-ai-chat [isOpen]="isAIChatOpen" (closeChat)="closeAIChat()"></app-ai-chat>
       </div>
     </ion-content>
 
@@ -87,7 +94,7 @@ import { AuthService } from '../services/auth.service';
   `,
   styleUrls: ['./tasks.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, SidebarComponent]
+  imports: [IonicModule, CommonModule, FormsModule, SidebarComponent, AIChatComponent]
 })
 export class TasksPage implements OnInit, OnDestroy {
   tasks: Task[] = [];
@@ -97,6 +104,7 @@ export class TasksPage implements OnInit, OnDestroy {
   isEditing = false;
   currentTask: Partial<Task> = {};
   private tasksSubscription: Subscription | undefined;
+  isAIChatOpen = false;
 
   constructor(
     private taskService: TaskService,
@@ -161,5 +169,13 @@ export class TasksPage implements OnInit, OnDestroy {
 
   deleteTask(taskId: string) {
     this.taskService.deleteTask(taskId);
+  }
+
+  openAIChat() {
+    this.isAIChatOpen = true;
+  }
+
+  closeAIChat() {
+    this.isAIChatOpen = false;
   }
 }

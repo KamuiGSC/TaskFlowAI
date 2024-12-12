@@ -45,6 +45,6 @@ export class WelcomePage implements OnInit {
 
   goToTasks() {
     localStorage.setItem('welcomeShown', 'true');
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/tasks']);
   }
 }

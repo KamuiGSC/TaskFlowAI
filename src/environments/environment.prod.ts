@@ -8,5 +8,6 @@ export const environment = {
     messagingSenderId: "356695377209",
     appId: "1:356695377209:web:6c61d87c55bdabb07694e8",
     measurementId: "G-7LM1J2XL10"
-  }
+  },
+  openAIApiKey: "",
 };

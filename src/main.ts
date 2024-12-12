@@ -20,6 +20,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from './environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 
 if (environment.production) {
@@ -29,6 +30,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    InAppBrowser,
     importProvidersFrom(IonicModule.forRoot({})),
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),

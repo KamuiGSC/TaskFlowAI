@@ -1,0 +1,35 @@
+.chat-messages {
+  height: calc(100% - 56px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.user-message, .ai-message {
+  max-width: 70%;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #6D39D5;
+  color: white;
+}
+
+.ai-message {
+  align-self: flex-start;
+  background-color: #3C3C3C;
+  color: white;
+}
+
+ion-footer ion-toolbar {
+  padding: 0 8px;
+}
+
+ion-spinner {
+  width: 20px;
+  height: 20px;
+}

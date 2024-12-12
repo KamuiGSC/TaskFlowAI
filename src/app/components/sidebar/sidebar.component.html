@@ -1,3 +1,29 @@
-<p>
-  sidebar works!
-</p>
+<div class="sidebar-container">
+  <!-- Botón para mostrar/ocultar la barra lateral -->
+  <div class="toggle-button" (click)="toggleSidebar()">
+    <ion-icon name="menu-outline"></ion-icon>
+  </div>
+
+  <!-- Barra lateral (visible solo si no está colapsada) -->
+  <div class="sidebar" *ngIf="!isCollapsed">
+    <div class="user-profile" routerLink="/profile">
+      <img [src]="user?.photoURL || 'assets/user.png'" alt="Usuario" class="user-avatar">
+      <span class="user-name">{{ user?.displayName || 'Usuario' }}</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a routerLink="/welcome" routerLinkActive="active" class="nav-item">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Inicio</span>
+      </a>
+      <a routerLink="/tasks" routerLinkActive="active" class="nav-item">
+        <ion-icon name="list-outline"></ion-icon>
+        <span>Tareas</span>
+      </a>
+      <a routerLink="/statistics" routerLinkActive="active" class="nav-item">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+        <span>Estadísticas</span>
+      </a>
+    </nav>
+  </div>
+</div>
